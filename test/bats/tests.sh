@@ -49,8 +49,8 @@ setup() {
 }
 
 @test "all selected apache mods should be loaded" {
-  run docker exec "$CONTAINER" apache2ctl -M 2> /dev/null || true
-  [ $(echo "$output" | grep -cE "macro|proxy_balancer|proxy_http") -eq 3 ]
+  run docker exec "$CONTAINER" apache2ctl -M 2> /dev/null | grep -cE "macro|proxy_balancer|proxy_http" || true 
+  [ "$output" -eq 3 ]
 }
 
 @test "mail server ports are responding" {

@@ -45,20 +45,19 @@ fi
   echo "Subject: $SUBJECT"
   echo "To: $SENDER"
   echo "Content-Type: text/html"
-} >> "$FILE_OUT"
-cat <<EOT >> "$FILE_OUT"
-Now, you have successfully reached ${HNAME} 
+
+echo "Now, you have successfully reached ${HNAME} 
  
 ------ This is a copy of your message, including all the headers ------
  
-EOT
+EOT"
  
 sed 's/^/> /' "$FILE_IN" >> "$FILE_OUT"
-cat <<EOT >> "$FILE_OUT"
- 
+
+echo "
 ------------------- End of the copy of your message -------------------
- 
-EOT
+"
+} >> "$FILE_OUT"
  
 #/usr/sbin/sendmail -i -t -f "" < $FILE_OUT 
 mailx -i -t -S ttycharset=UTF-8 -S sendcharsets=UTF-8 -S encoding=8bit < "$FILE_OUT"

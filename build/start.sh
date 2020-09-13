@@ -43,7 +43,7 @@ list=$(ls -1 /etc/supervisor/init.d/*)
 for i in $list ; do
   if [ -e "$i" ] ; then
     task=$(basename "$i")
-     if [ "$(grep 'autostart=false' /etc/supervisor/services.d/${task})" = "" ] ; then
+     if [ "$(grep 'autostart=false' /etc/supervisor/services.d/"$task")" = "" ] ; then
        echo "execute: <$task>"
        $i
      fi
