@@ -21,12 +21,12 @@
 FROM debian:buster-slim
 
 LABEL maintainer="mail@jcrooke.net"
-LABEL description="ISPConfig 3.1 on Debian Buster, with Roundcube mail, phpMyAdmin and more"
+LABEL description="ISPConfig 3.2 on Debian Buster, with Roundcube mail, phpMyAdmin and more"
 
 # All arguments
 ARG BUILD_CERTBOT="yes"
 ARG BUILD_HOSTNAME="myhost.test.com"
-ARG BUILD_ISPCONFIG_VERSION="3.1.15p3"
+ARG BUILD_ISPCONFIG_VERSION="3.2.1"
 ARG BUILD_ISPCONFIG_DROP_EXISTING="no"
 ARG BUILD_ISPCONFIG_MYSQL_DATABASE="dbispconfig"
 ARG BUILD_ISPCONFIG_PORT="8080"
@@ -42,7 +42,7 @@ ARG BUILD_PHPMYADMIN_USER="phpmyadmin"
 ARG BUILD_PHPMYADMIN_VERSION="4.9.1"
 ARG BUILD_PRINTING="no"
 ARG BUILD_REDIS="yes"
-ARG BUILD_ROUNDCUBE_VERSION="1.4.5"
+ARG BUILD_ROUNDCUBE_VERSION="1.4.9"
 ARG BUILD_ROUNDCUBE_DB="roundcube"
 ARG BUILD_ROUNDCUBE_DIR="/opt/roundcube"
 ARG BUILD_ROUNDCUBE_PW="secretpassword"
